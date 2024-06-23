@@ -9,7 +9,7 @@
     <script>
         let game;
         window.onload = function () {
-            game = new Game(3);
+            game = new Game(5);
             game.start();
         }
     </script>
@@ -17,8 +17,8 @@
 </head>
 
 <body>
-    <div id="game">
-        <table class="table is-bordered">
+    <div id="game" class="section is-unselectable" onclick="game.check()">
+        <!-- <table class="table is-bordered">
             <tr>
                 <td id="cell-0-0" onclick="game.toggleCell(0, 0)"></td>
                 <td id="cell-0-1" onclick="game.toggleCell(0, 1)"></td>
@@ -43,7 +43,7 @@
                 <td id="sum-col-2" class="is-info"></td>
                 <td id="null"></td>
             </tr>
-        </table>
+        </table> -->
     </div>
     <div id="result"></div>
 </body>
