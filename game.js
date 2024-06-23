@@ -100,7 +100,7 @@ class Game {
         this.table = this.tableGenerator(dimension);
         document.getElementById('game').innerHTML = '';
         document.getElementById('game').appendChild(this.table);
-        console.log(this.board);
+        // console.log(this.board);
     }
 
     tableGenerator(dimension) {
@@ -147,13 +147,15 @@ class Game {
             for (let j = 0; j < this.board.dimension; j++) {
                 let cell = this.board.getCell(i, j);
                 document.getElementById('cell-' + i + '-' + j).innerText = cell.value;
-                console.log(this.board.getCell(i, j));
+                // console.log(this.board.getCell(i, j));
             }
         }
         for (let i = 0; i < this.board.dimension; i++) {
             document.getElementById('sum-row-' + i).innerText = this.board.getSolutionRowSum(i);
             document.getElementById('sum-col-' + i).innerText = this.board.getSolutionColSum(i);
         }
+
+        this.check();
     }
 
     toggleCell(row, col) {
@@ -171,6 +173,7 @@ class Game {
             element.classList.remove('is-danger');
             element.classList.add('is-success');
         }
+        this.check();
     }
 
     check() {
@@ -198,7 +201,9 @@ class Game {
         }
 
         if (win) {
-            alert('You win!');
+            setTimeout(() => {
+                alert('You win!');
+            }, 10);
         }
     }
 }

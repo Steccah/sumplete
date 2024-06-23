@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sumplete</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
     <link rel="stylesheet" href="center.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
     <script src="game.js"></script>
+    <script src="theme.js"></script>
     <script>
         let game;
         window.onload = function () {
@@ -19,18 +20,39 @@
 
 <body>
     <div class="section">
-        <div id="game" class="container is-unselectable" onclick="game.check()">
+        <div class="center space">
+            <div>
+                <input style="width: 5em;" class="input" id="size" type="number" min="2" max="7">
+                <button class="button is-primary" onclick='
+                let size = document.getElementById("size").value;
+                game = new Game(size);
+                game.start();
+                '>change</button>
+            </div>
+            <button class="button" onclick="toggleTheme()">
+                <p id="theme" src="img/moon.svg">🌜</p>
+            </button>
         </div>
         <hr>
-        <div class="container">
-            <input style="width: 30%;" class="input" id="size" type="number" max="7">
-            <button class="button is-primary" onclick='
-            let size = document.getElementById("size").value;
-            game = new Game(size);
-            game.start();
-            '>change</button>
+        <div id="game" class="center is-unselectable">
         </div>
     </div>
+    <div class="section">
+        <div class="center">
+            <h2 class="is-size-1">Rules</h2>
+        </div>
+        <div class="center">
+            <p>The sum of the numbers in each row and column must be the same.</p>
+        </div>
+        <div class="center">
+            <p>Clicking one time on a number will mark it as valid.</p>
+        </div>
+        <div class="center">
+            <p>Clicking two times will mark it as invalid.</p>
+        </div>
+        <div class="center">
+            <p>Clicking three times will reset it.(Game only checks invalid marks)</p>
+        </div>
     </div>
 </body>
 
