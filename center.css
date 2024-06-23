@@ -1,0 +1,16 @@
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.space div {
+    margin: 0 1em;
+}
+
+#game table.table td {
+    padding: 0.5em;
+    width: 3em;
+    height: 3em;
+    text-align: center;
+    vertical-align: middle;
+}

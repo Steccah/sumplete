@@ -46,7 +46,7 @@ class Board {
     getColSum(col) {
         let sum = 0;
         for (let row = 0; row < this.dimension; row++) {
-            if (this.getCell(row, col).isEnabled() || this.getCell(row, col).isNormal()) {
+            if (!this.getCell(row, col).isDisabled()) {
                 sum += this.getCell(row, col).value;
             }
         }
@@ -56,7 +56,7 @@ class Board {
     getRowSum(row) {
         let sum = 0;
         for (let col = 0; col < this.dimension; col++) {
-            if (this.getCell(row, col).isEnabled() || this.getCell(row, col).isNormal()) {
+            if (!this.getCell(row, col).isDisabled()) {
                 sum += this.getCell(row, col).value;
             }
         }
@@ -98,6 +98,7 @@ class Game {
     constructor(dimension) {
         this.board = new Board(dimension);
         this.table = this.tableGenerator(dimension);
+        document.getElementById('game').innerHTML = '';
         document.getElementById('game').appendChild(this.table);
         console.log(this.board);
     }
