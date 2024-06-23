@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumplete</title>
+    <script src="game.js"></script>
+    <script>
+        let game;
+        window.onload = function () {
+            game = new Game(3);
+            game.start();
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+</head>
+
+<body>
+    <div id="game">
+        <table class="table is-bordered">
+            <tr>
+                <td id="cell-0-0" onclick="game.toggleCell(0, 0)"></td>
+                <td id="cell-0-1" onclick="game.toggleCell(0, 1)"></td>
+                <td id="cell-0-2" onclick="game.toggleCell(0, 2)"></td>
+                <td id="sum-row-0" class="is-info"></td>
+            </tr>
+            <tr>
+                <td id="cell-1-0" onclick="game.toggleCell(1, 0)"></td>
+                <td id="cell-1-1" onclick="game.toggleCell(1, 1)"></td>
+                <td id="cell-1-2" onclick="game.toggleCell(1, 2)"></td>
+                <td id="sum-row-1" class="is-info"></td>
+            </tr>
+            <tr>
+                <td id="cell-2-0" onclick="game.toggleCell(2, 0)"></td>
+                <td id="cell-2-1" onclick="game.toggleCell(2, 1)"></td>
+                <td id="cell-2-2" onclick="game.toggleCell(2, 2)"></td>
+                <td id="sum-row-2" class="is-info"></td>
+            </tr>
+            <tr>
+                <td id="sum-col-0" class="is-info"></td>
+                <td id="sum-col-1" class="is-info"></td>
+                <td id="sum-col-2" class="is-info"></td>
+                <td id="null"></td>
+            </tr>
+        </table>
+    </div>
+    <div id="result"></div>
+</body>
+
+</html>
