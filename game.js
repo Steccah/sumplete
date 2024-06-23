@@ -100,7 +100,8 @@ class Game {
         this.table = this.tableGenerator(dimension);
         document.getElementById('game').innerHTML = '';
         document.getElementById('game').appendChild(this.table);
-        // console.log(this.board);
+        this.initialTime = new Date().getTime();
+        setInterval(() => this.timer(), 1000);
     }
 
     tableGenerator(dimension) {
@@ -202,8 +203,14 @@ class Game {
 
         if (win) {
             setTimeout(() => {
-                alert('You win!');
+                alert('You won in ' + (new Date().getTime() - this.initialTime) / 1000 + ' seconds!');
+                window.location.reload();
             }, 10);
         }
+    }
+
+    timer() {
+        let time = new Date().getTime() - this.initialTime;
+        document.getElementById('timer').innerText = Math.round(time / 1000);
     }
 }
