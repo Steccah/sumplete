@@ -1,0 +1,3 @@
+User-agent: *
+
+Sitemap: https://sumplete.stecca.dev/sitemap.xml
