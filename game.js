@@ -101,7 +101,6 @@ class Game {
         document.getElementById('game').innerHTML = '';
         document.getElementById('game').appendChild(this.table);
         this.initialTime = new Date().getTime();
-        setInterval(() => this.timer(), 1000);
     }
 
     tableGenerator(dimension) {

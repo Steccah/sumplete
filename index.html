@@ -30,6 +30,7 @@
         window.onload = function () {
             game = new Game(5);
             game.start();
+            setInterval(() => game.timer(), 1000);
         }
     </script>
 </head>
